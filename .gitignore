@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.env
+data/*.sqlite
+data/*.sqlite-*
+data/*.log
+data/status.json
+data/KILL
+*.egg-info/
+dist/
+build/
+.coverage
+agent-tools/

@@ -1,0 +1,19 @@
+[Unit]
+Description=CoinDCX Phase-1 paper trading bot (Bratadeep)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=paperbot
+WorkingDirectory=/opt/paperbot
+EnvironmentFile=/opt/paperbot/.env
+Environment=BROKER=paper
+Environment=ARM_LIVE_TRADING=false
+ExecStart=/usr/bin/python3 -m paperbot run
+Restart=always
+RestartSec=15
+# Do not give this service any CoinDCX API keys.
+
+[Install]
+WantedBy=multi-user.target

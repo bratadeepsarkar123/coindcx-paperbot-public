@@ -1,0 +1,2 @@
+# Runtime: Python 3.11+ standard library only. Nothing to pip-install for the bot.
+# Tests: pip install -r requirements-dev.txt

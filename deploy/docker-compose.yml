@@ -1,0 +1,20 @@
+services:
+  paperbot:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    container_name: coindcx-paperbot
+    restart: unless-stopped
+    env_file:
+      - path: ../.env
+        required: false
+    environment:
+      BROKER: paper
+      ARM_LIVE_TRADING: "false"
+      LEDGER_PATH: /app/data/ledger.sqlite
+      KILL_FILE: /app/data/KILL
+      LOG_PATH: /app/data/paperbot.log
+      STATUS_PATH: /app/data/status.json
+    volumes:
+      - ../data:/app/data
+      - ../fixtures:/app/fixtures:ro
