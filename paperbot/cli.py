@@ -63,7 +63,7 @@ def main(argv: list[str] | None = None) -> int:
         except Exception as exc:
             print(exc, file=sys.stderr)
             return 2
- mar        if args.once:
+        if args.once:
             ledger = Ledger(settings.ledger_path)
             try:
                 status = run_once(
